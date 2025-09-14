@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Oracle - App Menu</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background: #6a5acd;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    header button {
+      background: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    header button:hover {
+      background: #ddd;
+    }
+    #alert-bar {
+      display: none;
+      background: #ffefc5;
+      color: #5a3c00;
+      text-align: center;
+      padding: 8px;
+      font-size: 0.95em;
+    }
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="alert-bar">⚠️ No API key found. Please go to <b>BYOK</b> and add your key.</div>
+
+  <header>
+    <button onclick="loadPage('Aura.html')">✨ Aura</button>
+    <button onclick="loadPage('daily.html')">📅 Daily</button>
+    <button onclick="loadPage('weekly.html')">📊 Weekly</button>
+    <button onclick="loadPage('profile.html')">👤 Profile</button>
+    <button onclick="loadPage('byok.html')">🔑 BYOK</button>
+  </header>
+  
+  <iframe id="content-frame" src="Aura.html"></iframe>
+
+  <script>
+    // Page switching
+    function loadPage(page) {
+      document.getElementById("content-frame").src = page;
+    }
+
+    // BYOK check
+    function checkBYOK() {
+      const openaiKey = localStorage.getItem("openaiKey");
+      if (!openaiKey) {
+        document.getElementById("alert-bar").style.display = "block";
+      }
+    }
+
+    // Run on load
+    checkBYOK();
+  </script>
+</body>
+</html>
