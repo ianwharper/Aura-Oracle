@@ -1,22 +1,18 @@
-document.getElementById("profileForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.getElementById("profileForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-  const dob = document.getElementById("dob").value;
-  const tob = document.getElementById("tob").value;
-  const pob = document.getElementById("pob").value;
+  const profile = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    dob: document.getElementById("dob").value,
+    tob: document.getElementById("tob").value,
+    pob: document.getElementById("pob").value,
+  };
 
-  // Save to localStorage
-  localStorage.setItem("dob", dob);
-  localStorage.setItem("tob", tob);
-  localStorage.setItem("pob", pob);
+  console.log("Profile saved:", profile);
 
-  // Update status
-  document.getElementById("status").innerText = "✅ Profile saved locally.";
+  // Local save for now
+  localStorage.setItem("userProfile", JSON.stringify(profile));
 
-  // (Future) Send to BSP via webhook
-  // fetch("https://your-bsp-webhook.com", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ dob, tob, pob })
-  // });
+  alert("Profile saved successfully!");
 });
