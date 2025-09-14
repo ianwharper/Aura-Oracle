@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura - Oracle Assistant</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.6em;
+      color: #6a5acd;
+    }
+    .card p {
+      font-size: 1.1em;
+      line-height: 1.4;
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #6a5acd;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #5847a8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Aura’s Oracle Report Card -->
+  <div class="card" id="aura-report">
+    <h2>✨ Aura - Oracle Insight</h2>
+    <p id="report-text">Loading wisdom...</p>
+    <button class="btn" onclick="downloadPDF()">📄 Download as PDF</button>
+  </div>
+
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    // Fake Oracle wisdom (swap with API/JSON later)
+    const report = {
+      type: "Oracle Daily",
+      message: "Today is a day of completion. Close old loops, honor endings, and prepare for the next leap forward."
+    };
+
+    // Render report
+    document.getElementById("report-text").innerText = report.message;
+
+    // PDF Export function
+    function downloadPDF() {
+      const element = document.getElementById("aura-report");
+      html2pdf().set({
+        margin: 0.5,
+        filename: `${report.type.replace(" ", "_")}_Aura.pdf`,
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+      }).from(element).save();
+    }
+  </script>
+</body>
+</html>
