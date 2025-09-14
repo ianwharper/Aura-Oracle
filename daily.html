@@ -3,24 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura Daily Report</title>
+  <title>Aura - Daily Report</title>
   <link rel="stylesheet" href="style.css">
-  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <div class="card">
-    <h2>🌅 Aura — Daily Insight</h2>
-    <p id="daily-report">
-      Loading today’s flow... (this will be replaced by JS)
-    </p>
-    <button onclick="downloadPDF('daily-report', 'Aura_Daily_Report.pdf')">
-      ⬇️ Download Daily as PDF
-    </button>
+  <div class="card" id="daily-report">
+    <h2>🌅 Daily Oracle Insight</h2>
+    <p>Finish strong, clear space for the next leap.</p>
+    <button class="btn" onclick="downloadPDF('daily-report', 'Daily_Aura_Report.pdf')">📄 Download as PDF</button>
   </div>
-  <nav>
-    <a href="Aura.html">Home</a> |
-    <a href="profile.html">Profile</a> |
-    <a href="weekly.html">Weekly</a>
-  </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
