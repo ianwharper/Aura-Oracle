@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 20px;
 }
+
 .card {
   background: white;
   border-radius: 16px;
@@ -12,16 +13,19 @@ body {
   margin: 20px auto;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
+
 .card h2 {
   margin-bottom: 15px;
   font-size: 1.6em;
   color: #6a5acd;
 }
+
 .card p, .card ul {
   font-size: 1.1em;
   line-height: 1.5;
   color: #333;
 }
+
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -33,9 +37,11 @@ body {
   font-size: 1em;
   cursor: pointer;
 }
+
 .btn:hover {
   background: #5847a8;
 }
+
 .sub-card {
   background: #fafafa;
   border-radius: 12px;
@@ -43,6 +49,7 @@ body {
   margin: 10px 0;
   box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
+
 .sub-card h3 {
   margin: 0 0 6px;
   color: #6a5acd;
