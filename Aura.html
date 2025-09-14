@@ -25,10 +25,17 @@
       <p>Clarity and insight guide your decisions. Trust your intuition.</p>
     </div>
 
-    <button class="btn" onclick="downloadPDF()">📄 Download as PDF</button>
+    <button class="btn" onclick="downloadPDF('aura-report','Aura_Report.pdf')">📄 Download as PDF</button>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // 🔑 Check BYOK + Log usage
+    const key = getOpenAIKey();
+    if (key) {
+      sendToBSP({ type: "report_usage", report: "aura", timestamp: new Date().toISOString() });
+    }
+  </script>
 </body>
 </html>
