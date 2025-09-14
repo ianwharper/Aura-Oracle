@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BYOK - API Key Setup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>🔑 Bring Your Own Key</h2>
+    <p>Enter your OpenAI API key. It will be stored locally on your device and never sent to our servers.</p>
+
+    <form id="byokForm">
+      <label for="openaiKey">OpenAI API Key:</label><br>
+      <input type="password" id="openaiKey" placeholder="sk-..." required><br><br>
+      <button class="btn" type="submit">Save Key</button>
+    </form>
+  </div>
+
+  <script src="js/byok.js"></script>
+</body>
+</html>
