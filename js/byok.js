@@ -11,5 +11,4 @@ document.getElementById("byokForm").addEventListener("submit", function(event) {
   localStorage.setItem("openaiKey", key);
 
   alert("✅ Your API key has been saved locally!");
-  window.location.href = "Aura.html"; // redirect back to main page
 });
