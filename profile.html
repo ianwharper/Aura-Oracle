@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aura Profile Setup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>✨ Setup Your Profile</h2>
+    <form id="profileForm">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="tob">Time of Birth:</label>
+      <input type="time" id="tob" name="tob" required>
+
+      <label for="pob">Place of Birth:</label>
+      <input type="text" id="pob" name="pob" placeholder="City, Country" required>
+
+      <button type="submit">Save Profile</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>
