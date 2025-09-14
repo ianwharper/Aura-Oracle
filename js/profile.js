@@ -9,10 +9,12 @@ document.getElementById("profileForm").addEventListener("submit", function(event
     pob: document.getElementById("pob").value,
   };
 
-  console.log("Profile saved:", profile);
-
-  // Local save for now
   localStorage.setItem("userProfile", JSON.stringify(profile));
-
   alert("Profile saved successfully!");
+
+  // 📤 Send to BSP
+  sendToBSP({
+    type: "profile",
+    data: profile
+  });
 });
