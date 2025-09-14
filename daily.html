@@ -12,7 +12,15 @@
     <p>Finish strong, clear space for the next leap.</p>
     <button class="btn" onclick="downloadPDF('daily-report', 'Daily_Aura_Report.pdf')">📄 Download as PDF</button>
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // 🔑 Check BYOK + Log usage
+    const key = getOpenAIKey();
+    if (key) {
+      sendToBSP({ type: "report_usage", report: "daily", timestamp: new Date().toISOString() });
+    }
+  </script>
 </body>
 </html>
